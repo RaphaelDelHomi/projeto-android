@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Raphael & Camilly ❤️</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background: linear-gradient(135deg,#0f0f0f,#1a1a1a,#2b1020);
+      color:white;
+      overflow-x:hidden;
+    }
+
+    header{
+      position:fixed;
+      top:0;
+      width:100%;
+      padding:20px;
+      background:rgba(0,0,0,0.5);
+      backdrop-filter:blur(10px);
+      z-index:1000;
+    }
+
+    nav{
+      display:flex;
+      justify-content:center;
+      gap:30px;
+    }
+
+    nav button{
+      background:none;
+      border:none;
+      color:white;
+      font-size:18px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    nav button:hover{
+      color:#ff4d88;
+      transform:scale(1.1);
+    }
+
+    .pagina{
+      min-height:100vh;
+      display:none;
+      padding:120px 20px 50px;
+      animation:fade 0.5s;
+    }
+
+    .ativa{
+      display:block;
+    }
+
+    @keyframes fade{
+      from{
+        opacity:0;
+        transform:translateY(10px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .inicio{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+    }
+
+    .inicio h1{
+      font-size:65px;
+      color:#ff4d88;
+      margin-bottom:20px;
+      text-shadow:0 0 20px #ff4d88;
+    }
+
+    .inicio p{
+      max-width:700px;
+      line-height:1.8;
+      font-size:20px;
+      opacity:0.9;
+    }
+
+    .contador{
+      margin-top:40px;
+      background:rgba(255,255,255,0.08);
+      padding:25px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.1);
+      box-shadow:0 0 20px rgba(255,77,136,0.2);
+    }
+
+    .contador h2{
+      color:#ff4d88;
+      margin-bottom:10px;
+    }
+
+    .titulo{
+      text-align:center;
+      font-size:45px;
+      margin-bottom:50px;
+      color:#ff4d88;
+    }
+
+    .galeria{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .foto{
+      background:#1f1f1f;
+      border-radius:20px;
+      overflow:hidden;
+      transition:0.4s;
+    }
+
+    .foto:hover{
+      transform:scale(1.03);
+      box-shadow:0 0 20px rgba(255,77,136,0.4);
+    }
+
+    .foto img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+    }
+
+    .foto p{
+      padding:15px;
+      text-align:center;
+    }
+
+    .musicas{
+      max-width:900px;
+      margin:auto;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    .musica{
+      background:#1f1f1f;
+      padding:25px;
+      border-radius:20px;
+      transition:0.3s;
+    }
+
+    .musica:hover{
+      transform:translateY(-5px);
+      box-shadow:0 0 20px rgba(255,77,136,0.3);
+    }
+
+    .musica h3{
+      color:#ff4d88;
+      margin-bottom:15px;
+    }
+
+    .musica p{
+      margin-bottom:20px;
+      line-height:1.7;
+      opacity:0.9;
+    }
+
+    iframe{
+      border-radius:15px;
+    }
+
+    footer{
+      text-align:center;
+      padding:25px;
+      background:rgba(0,0,0,0.5);
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <nav>
+      <button onclick="mostrarPagina('home')">Início</button>
+      <button onclick="mostrarPagina('fotos')">Fotos</button>
+      <button onclick="mostrarPagina('musicas')">Músicas</button>
+    </nav>
+
+  </header>
+
+  <!-- PÁGINA INICIAL -->
+
+  <section class="pagina ativa inicio" id="home">
+
+    <h1>Raphael & Camilly ❤️</h1>
+
+    <p>
+      Esse site é nosso cantinho especial.
+      Um lugar onde guardamos nossas memórias,
+      sentimentos, músicas e momentos inesquecíveis.
+      Cada detalhe aqui representa um pedaço da nossa história.
+    </p>
+
+    <div class="contador">
+
+      <h2>Estamos juntos há:</h2>
+
+      <h3 id="tempo"></h3>
+
+    </div>
+
+  </section>
+
+  <!-- PÁGINA DE FOTOS -->
+
+ <!-- PÁGINA DE FOTOS -->
+
+ <!-- PÁGINA DE FOTOS -->
+<section class="pagina" id="fotos">
+
+  <h2 class="titulo">Nossas Memórias 📸</h2>
+
+  <div class="galeria">
+
+    <div class="foto">
+      <img src="foto1.jpg">
+      <p>
+        Cada sorriso seu virou meu lugar favorito ❤️
+      </p>
+    </div>
+
+    <div class="foto">
+      <img src="foto2.jpg">
+      <p>
+        Entre milhões de pessoas, meu coração escolheu você ✨
+      </p>
+    </div>
+
+    <div class="foto">
+      <img src="foto3.jpg">
+      <p>
+        Nosso amor transformando momentos simples em eternos 🌙
+      </p>
+    </div>
+
+    <div class="foto">
+      <img src="foto4.jpg">
+      <p>
+        Até o pôr do sol fica mais bonito quando lembro de você 🌅
+      </p>
+    </div>
+
+    <div class="foto">
+      <img src="foto5.jpg">
+      <p>
+        Você trouxe paz pro meu caos e amor pros meus dias ❤️
+      </p>
+    </div>
+
+    <div class="foto">
+      <img src="foto6.jpg">
+      <p>
+        Em cada olhar seu eu encontro um motivo pra sorrir ✨
+      </p>
+    </div>
+
+    <div class="foto">
+      <img src="foto7.jpg">
+      <p>
+        Algumas memórias passam… você ficou no meu coração 🌙
+      </p>
+    </div>
+
+    <div class="foto">
+      <img src="foto8.jpg">
+      <p>
+        Nosso amor merece ser lembrado em cada detalhe ❤️
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+</section>
+
+  <!-- PÁGINA DE MÚSICAS -->
+
+  <section class="pagina" id="musicas">
+
+  <h2 class="titulo">Nossas Músicas 🎵</h2>
+
+  <div class="musicas">
+
+    <div class="musica">
+
+      <h3>Na Linha do Tempo ❤️</h3>
+
+      <p>
+        Você apareceu na minha vida como algo que o destino já tinha escrito.
+        Desde então, cada momento ao seu lado virou memória,
+        carinho e amor guardado na nossa própria linha do tempo. ✨
+      </p>
+
+      <audio controls>
+        <source src="musica1.mp3" type="audio/mpeg">
+      </audio>
+
+    </div>
+
+    <div class="musica">
+
+      <h3>Nossa Música Especial 🌙</h3>
+
+      <p>
+        Algumas músicas simplesmente têm nossa alma dentro delas.
+        E quando ela toca, parece que o mundo desacelera
+        só pra me lembrar o quanto eu amo você. ❤️
+      </p>
+
+      <audio controls>
+        <source src="musica2.mp3" type="audio/mpeg">
+      </audio>
+
+    </div>
+
+  </div>
+
+</section>
+
+   
+
+  <footer>
+    Feito com amor por Raphael para Camilly ❤️
+  </footer>
+
+  <script>
+
+    function mostrarPagina(id){
+
+      const paginas = document.querySelectorAll(".pagina");
+
+      paginas.forEach(pagina => {
+        pagina.classList.remove("ativa");
+      });
+
+      document.getElementById(id).classList.add("ativa");
+    }
+
+    // CONTADOR
+
+    const dataNamoro = new Date("2026-03-29T00:00:00");
+
+    function atualizarTempo(){
+
+      const agora = new Date();
+
+      const diferenca = agora - dataNamoro;
+
+      const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+
+      const horas = Math.floor(
+        (diferenca % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
+      );
+
+      const minutos = Math.floor(
+        (diferenca % (1000 * 60 * 60)) /
+        (1000 * 60)
+      );
+
+      const segundos = Math.floor(
+        (diferenca % (1000 * 60)) / 1000
+      );
+
+      document.getElementById("tempo").innerHTML =
+      `${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos ❤️`;
+    }
+
+    setInterval(atualizarTempo,1000);
+
+    atualizarTempo();
+
+  </script>
+
+</body>
+</html>
