@@ -117,24 +117,41 @@
       color:#ff4d88;
     }
 
-    @media (max-width: 1000px){
     .galeria{
-        column-count:3;
+      isplay:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      max-width:1200px;
+      margin:auto;
     }
-}
 
-@media (max-width: 700px){
-    .galeria{
-        column-count:2;
+    .foto{
+    background:#1f1f1f;
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.4s;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+   }
+
+    .foto:hover{
+      transform:scale(1.03);
+      box-shadow:0 0 20px rgba(255,77,136,0.4);
     }
-}
 
-@media (max-width: 500px){
-    .galeria{
-        column-count:1;
+    .foto img{
+     width:100%;
+     height:320px;
+     object-fit:cover;
+     object-position:center;
+     display:block;
+   }
+
+    .foto p{
+      padding:15px;
+      text-align:center;
     }
-}
-
 
     .musicas{
       max-width:900px;
