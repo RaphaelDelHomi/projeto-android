@@ -188,73 +188,6 @@
       border-radius:15px;
     }
 
-    .poemas-grid{
-  max-width:1000px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.poema-card{
-  background:#1f1f1f;
-  padding:30px;
-  border-radius:20px;
-  text-align:center;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.poema-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 0 20px rgba(255,77,136,0.4);
-}
-
-.poema-card h3{
-  color:#ff4d88;
-}
-
-.modal{
-  display:none;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.8);
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-}
-
-.modal-conteudo{
-  background:#1f1f1f;
-  width:90%;
-  max-width:700px;
-  padding:30px;
-  border-radius:20px;
-  text-align:center;
-}
-
-.modal-conteudo h2{
-  color:#ff4d88;
-  margin-bottom:20px;
-}
-
-.modal-conteudo p{
-  line-height:1.8;
-  white-space:pre-line;
-}
-
-.fechar{
-  margin-top:20px;
-  padding:10px 20px;
-  border:none;
-  border-radius:10px;
-  background:#ff4d88;
-  color:white;
-  cursor:pointer;
-}
 
     footer{
       text-align:center;
@@ -273,7 +206,6 @@
       <button onclick="mostrarPagina('home')">Início</button>
       <button onclick="mostrarPagina('fotos')">Fotos</button>
       <button onclick="mostrarPagina('musicas')">Músicas</button>
-      <button onclick="mostrarPagina('poemas')">Poemas</button>
     </nav>
 
   </header>
@@ -429,43 +361,6 @@
 
 </section>
 
-<section class="pagina" id="poemas">
-
-  <h2 class="titulo">Nossos Poemas ❤️</h2>
-
-  <div class="poemas-grid">
-
-    <div class="poema-card" onclick="abrirPoema('poema1')">
-      <h3>Meu Lugar Favorito</h3>
-    </div>
-
-    <div class="poema-card" onclick="abrirPoema('poema2')">
-      <h3>Entre Milhões</h3>
-    </div>
-
-    <div class="poema-card" onclick="abrirPoema('poema3')">
-      <h3>Você é Meu Lar</h3>
-    </div>
-
-  </div>
-
-</section>
-
-<div class="modal" id="modalPoema">
-
-  <div class="modal-conteudo">
-
-    <h2 id="tituloPoema"></h2>
-
-    <p id="textoPoema"></p>
-
-    <button class="fechar" onclick="fecharPoema()">Fechar</button>
-
-  </div>
-
-</div>
-
-   
 
   <footer>
     Feito com amor por Raphael para Camilly ❤️
@@ -517,55 +412,6 @@
     setInterval(atualizarTempo,1000);
 
     atualizarTempo();
-
-    const poemas = {
-
-  poema1:{
-    titulo:"Meu Lugar Favorito",
-    texto:`Meu lugar favorito não é uma cidade,
-nem uma paisagem bonita.
-
-Meu lugar favorito é estar ao seu lado,
-ouvindo sua voz e vendo seu sorriso.
-
-Porque onde você está,
-é onde meu coração encontra paz. ❤️`
-  },
-
-  poema2:{
-    titulo:"Entre Milhões",
-    texto:`Entre milhões de pessoas,
-meu coração escolheu você.
-
-Entre milhões de caminhos,
-foi ao seu encontro que a vida me levou.
-
-E todos os dias agradeço
-por ter encontrado alguém tão especial. ✨`
-  },
-
-  poema3:{
-    titulo:"Você é Meu Lar",
-    texto:`Você é o abraço que acalma,
-o sorriso que ilumina
-e a presença que faz tudo valer a pena.
-
-Não importa onde eu esteja,
-porque meu verdadeiro lar
-sempre será você. ❤️`
-  }
-
-};
-
-function abrirPoema(id){
-  document.getElementById("tituloPoema").innerText = poemas[id].titulo;
-  document.getElementById("textoPoema").innerText = poemas[id].texto;
-  document.getElementById("modalPoema").style.display = "flex";
-}
-
-function fecharPoema(){
-  document.getElementById("modalPoema").style.display = "none";
-}
 
   </script>
 
