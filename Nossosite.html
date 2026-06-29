@@ -471,37 +471,44 @@
 
     // CONTADOR
 
-    const dataNamoro = new Date("2026-03-29T00:00:00");
+    <script>
 
-    function atualizarTempo(){
+function mostrarPagina(id){
+  ...
+}
 
-      const agora = new Date();
 
-      const diferenca = agora - dataNamoro;
+// CONTADOR (cola aqui)
 
-      const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+const dataNamoro = new Date(2026, 2, 29);
 
-      const horas = Math.floor(
-        (diferenca % (1000 * 60 * 60 * 24)) /
-        (1000 * 60 * 60)
-      );
+function atualizarTempo(){
 
-      const minutos = Math.floor(
-        (diferenca % (1000 * 60 * 60)) /
-        (1000 * 60)
-      );
+  const agora = new Date();
 
-      const segundos = Math.floor(
-        (diferenca % (1000 * 60)) / 1000
-      );
+  const inicio = new Date(
+    dataNamoro.getFullYear(),
+    dataNamoro.getMonth(),
+    dataNamoro.getDate()
+  );
 
-      document.getElementById("tempo").innerHTML =
-      `${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos ❤️`;
-    }
+  const hoje = new Date(
+    agora.getFullYear(),
+    agora.getMonth(),
+    agora.getDate()
+  );
 
-    setInterval(atualizarTempo,1000);
+  const diferencaDias = Math.floor(
+    (hoje - inicio) / (1000 * 60 * 60 * 24)
+  );
 
-    atualizarTempo();
+  document.getElementById("tempo").innerHTML =
+  `${diferencaDias} dias, ${agora.getHours()} horas, ${agora.getMinutes()} minutos e ${agora.getSeconds()} segundos ❤️`;
+}
+
+setInterval(atualizarTempo,1000);
+
+atualizarTempo();
 
   </script>
 
